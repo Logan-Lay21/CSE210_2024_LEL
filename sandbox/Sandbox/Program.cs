@@ -3,32 +3,37 @@ using System.Runtime.CompilerServices;
 
 class Program
 {
-    static void AwesomeFunction(int x)
-    {
-        Console.WriteLine($"The argumment {x} was passed to the awesome funciton");
-    }
     static void Main(string[] args)
     {
-        AwesomeFunction(65);
-        List<int> numberList;
-        numberList = new();
+        Costume nurse = new();
+        nurse.headWear = "face mask";
+        nurse.handWear = "nitrile gloves";
+        nurse.footWear = "orthopedic sneakers";
+        nurse.upperBodyWear = "scrubs";
+        nurse.lowerBodyWear = "scrubs";
+        nurse.accessory = "stethoscope";
 
-        int input=-1;
-        while (input != 0) 
-        {
-            Console.Write("Enter a number: ");
-            string inputString = Console.ReadLine();
-            input = int.Parse(inputString);
-            if (input != 0)
-            {
-                numberList.Add(input);
-            }
-        }
+        Costume detective = new();
+        detective.headWear = "fedora";
+        detective.handWear = "leather";
+        detective.footWear = "loafers";
+        detective.upperBodyWear = "trenchcoat";
+        detective.lowerBodyWear = "slacks";
+        detective.accessory = "magnifying glass";
 
-        foreach (int item in numberList)
-        {
-            Console.WriteLine(item);
-        }
+        Costume rancher = new();
+        rancher.headWear = "cowboy hat";
+        rancher.handWear = "leather";
+        rancher.footWear = "boots";
+        rancher.upperBodyWear = "flannel shirt";
+        rancher.lowerBodyWear = "jeans";
+        rancher.accessory = "lasso";
 
+        Console.WriteLine("Nurse Costume");
+        nurse.ShowWardrobe();
+        Console.WriteLine("Detective Costume");
+        detective.ShowWardrobe();
+        Console.WriteLine("Rancher Costume");
+        rancher.ShowWardrobe();
     }
 }
