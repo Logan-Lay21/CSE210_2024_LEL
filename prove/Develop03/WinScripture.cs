@@ -5,10 +5,6 @@ public class WinScripture
     private string _word = "";
     private bool _isHidden = false;
 
-    public void HideWord() {
-
-    }
-
     public string GetWord() {
         return _word;
     }
@@ -25,10 +21,17 @@ public class WinScripture
         _isHidden = tf;
     }
 
-    public void HideWord(int i) {
-        Scripture _s = new();
-        int length = _s._verseList[i].GetWord().Length;
+    public void HideWord() {
+        // Scripture _s = new();
+        // int length = _s._verseList[i].GetWord().Length;
+        // string replace = new string('_', length);
+        // _s._verseList[i].SetWord(replace);
+
+        int length = _word.Length;
         string replace = new string('_', length);
-        _s._verseList[i].SetWord(replace);
+        SetWord(replace);
     }
 }
+
+// string midWord = _s._verseList[5].GetWord();
+// int length = midWord.Length;

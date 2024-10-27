@@ -22,12 +22,12 @@ class Reference
         _v2 = endVerse;
     }
 
-    public void DisplayVerse() {
+    public void DisplayReference() {
         if (_v2 == " ") {
-            Console.WriteLine($"{_book} {_chpt}:{_v1}");
+            Console.Write($"{_book} {_chpt}:{_v1} ");
         }
         else {
-            Console.WriteLine($"{_book} {_chpt}:{_v1}-{_v2}");
+            Console.Write($"{_book} {_chpt}:{_v1}-{_v2} ");
         }
     }
 }

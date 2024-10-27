@@ -10,38 +10,53 @@ public class Scripture
 
     public List<WinScripture> _verseList = new();
 
-    public void DefVerseList() {
-        // int x = 0;
+    public Scripture() {
         string [] transfer = _verse.Split(" ");
         foreach (string word in transfer) {
             WinScripture wis = new();
             wis.SetWord(word); 
             _verseList.Add(wis);
-            // Console.WriteLine(_verseList[x].GetWord());
-            // Console.WriteLine(_verseList[x].GetisHidden());
-
-            // x++;
         }
     }
 
-    public void RandomIndex() {
+    public bool RandomIndex() {
         Random randomGenerator = new Random();
-        int i = randomGenerator.Next(0,38);
+        int i = randomGenerator.Next(0,_verseList.Count);
         int count = 0;
+        int wordsLeft = 0;
+        foreach (WinScripture word in _verseList) {
+            if (!word.GetisHidden()){
+                wordsLeft++;
+            };
+        }
         do {
             if (_verseList[i].GetisHidden() == false) {
-                WinScripture wis = new();
-                wis.HideWord(i);
-                wis.SetisHidden(true);
+                _verseList[i].HideWord();
+                _verseList[i].SetisHidden(true);
                 count++;
+                wordsLeft -= 1;
             }
-            else {
-            i = randomGenerator.Next(1,38);
-            }
-        } while (count != 3);
 
-            
-            
+            else {
+                i = randomGenerator.Next(0,_verseList.Count);
+            }
+        } while ((count < 3) && (!(wordsLeft == 0)));
+        if (wordsLeft == 0) {
+            // Console.WriteLine("No wordy :)");
+            return true;
+        }
+        else {
+            // Console.WriteLine("You lying???");
+            return false;
+        }
+    }
+
+    public void DisplayScripture() {
+        Reference _r = new Reference("Alma", "36", "7");
+        _r.DisplayReference();
+        foreach (WinScripture word in _verseList) {
+            Console.Write($"{word.GetWord()} ");
+        }
     }
 
     public string GetVerse()
