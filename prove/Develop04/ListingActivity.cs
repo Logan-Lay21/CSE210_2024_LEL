@@ -53,6 +53,9 @@ public class ListingActivity : Activity {
                 continue;
                 
             _userResponses.Add(response);
+
+            TimeSpan remaining = futureTime - DateTime.Now;
+            Console.WriteLine($"Time remaining: {remaining.Seconds} seconds");
         }   while (DateTime.Now < futureTime);
         Console.WriteLine($"You listed {_userResponses.Count} items!");
             
