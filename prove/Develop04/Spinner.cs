@@ -14,22 +14,6 @@ public class Spinner {
     private int _iterations = 8;
     private int _sleep = 500;
     private static string[] loading = {"|","/","-","\\"};
-        // @"
-        //        O
-        //       |l|   
-        //        ll
-        //     --------",
-        // @"
-                    
-        //       _O_     
-        //        ll     
-        //     --------",
-        // @"
-        //        O
-        //       |l|   
-        //        ll
-                        
-        //     --------"
     public void StartLoading() 
     {
         while (_count < _iterations)

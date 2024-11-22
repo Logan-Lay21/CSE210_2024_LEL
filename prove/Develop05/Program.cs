@@ -29,17 +29,50 @@ Select a choice from the menu: ");
                     Console.Clear();
 
                     //Prompt the user for a goal type
-                    //Create corresponding goal
-                    //add to goal list
-                    Simple simpleGoal = new Simple("the unseen", "You should not be seeing this", 20);
-                    simpleGoal.CreateGoal();
-                    G.AddGoal(simpleGoal);
+                    Console.Write(@"
+1. Simple
+2. Eternal
+3. Checklist
 
-                    Console.WriteLine(G.GetGoals());
+What kind of goal would you like to make? 
+");
 
-                    Console.WriteLine(simpleGoal.GetName());
+                    string goalChoice = Console.ReadLine();
 
-                    // Thread.Sleep(1000);
+                    switch (goalChoice)
+                    {
+                        case "1": //Simple goal
+                            Console.Clear();
+                            Simple simpleGoal = new Simple();
+                            //Create corresponding goal
+                            simpleGoal.CreateGoal();
+                            //add to goal list
+                            G.AddGoal(simpleGoal);
+                            break;
+                        
+                        case "2": //Eternal goal
+                            Console.Clear();
+                            Eternal eternalGoal = new Eternal();
+                            //Create eternal goal
+                            eternalGoal.CreateGoal();
+                            //add goal to list
+                            G.AddGoal(eternalGoal);
+                            break;
+                        case "3": //Checklist goal
+                            Console.Clear();
+                            Checklist cGoal = new Checklist();
+                            //Create eternal goal
+                            cGoal.CreateGoal();
+                            //add goal to list
+                            G.AddGoal(cGoal);
+                            break;
+                    }
+                    
+
+
+
+                    Console.WriteLine("\nPress any key to continue");
+                    Console.ReadKey();
 
 
 
@@ -48,16 +81,46 @@ Select a choice from the menu: ");
                     Console.Clear();
                     G.ListGoals();
 
-                    Thread.Sleep(10000);
+                    Console.WriteLine("\nPress any key to continue");
+                    Console.ReadKey();
+
                     break;
+
+
                 case "3": // Save Goals
                     Console.Clear();
+
+                    G.SaveGoals();
+                    
+                    Console.WriteLine("\nSaved!");
+
+                    Console.WriteLine("\nPress any key to continue");
+                    Console.ReadKey();
+
                     break;
+
+
                 case "4": // Load Goals
                     Console.Clear();
+
+                    G.LoadGoals();
+
+                    Console.WriteLine("\nLoaded!");
+
+                    Console.WriteLine("\nPress any key to continue");
+                    Console.ReadKey();
+
                     break;
+
+
                 case "5": // Record Event
                     Console.Clear();
+
+                    G.RecordGoalEvent();
+
+                    Console.WriteLine("\nPress any key to continue");
+                    Console.ReadKey();
+
                     break;
                 case "6": // Quit
                     running = false;
