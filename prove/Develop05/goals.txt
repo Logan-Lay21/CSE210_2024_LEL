@@ -1,3 +1,5 @@
+1~Make project outline~make the project outline for CSE210~200~False
 1~steal moon~steal the moon~250~True
 2~Scrips~read scrips~50~1
-3~eat 5 grapes~eat 5 grapes today~10~5~5~50
+3~eat 5 grapes~eat 5 grapes today~10~7~5~50
+1~Find fork~find a fork~50~False
