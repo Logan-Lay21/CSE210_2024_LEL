@@ -4,12 +4,12 @@ class Program
 {
     static void Main(string[] args)
     {
-        Polynomial p = new Polynomial();
+        // Polynomial p = new Polynomial();
         Exponential e = new Exponential();
         NaturalLog n = new NaturalLog();
         SinCos sinCos = new SinCos();
         Calculator c = new Calculator();
-        Expression ex = new Expression();
+        // Expression ex = new Expression();
 
         bool running = true;
 
@@ -41,6 +41,11 @@ Select a choice from the menu: ");
                 
                 // Call Expression and have the user define the bounds and expression value.
                 // Call calculator and have it do big maths.
+                Expression ex = new Expression(5, 10, "2x^2");
+                ex.SplitExp();
+                
+
+                
 
                 Console.WriteLine($"The integral of {ex.GetExpression()} from {ex.GetLowerBound()} to {ex.GetUpperBound()} is {c.CalcSum()}");
 
