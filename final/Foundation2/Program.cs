@@ -7,7 +7,7 @@ class Program
         Console.Clear();
         Product p11 = new Product("Cheese","D4",5.89m,3);
         Product p12 = new Product("Crackers", "B9", 1.99m, 5);
-        Customer c1 = new Customer("Logan Lay", new Address("123 Main St", "Anytown", "NY", "USA"));
+        Customer c1 = new Customer("Logan Lay", new Address("123 Main St", "New York", "NY", "USA"));
         Order o1 = new Order(c1);
         o1.AddItem(p11);
         o1.AddItem(p12);
@@ -20,7 +20,7 @@ class Program
 
         Product p21 = new Product("Potatoes","D7",7.99m,3);
         Product p22 = new Product("Chicken", "F7", 9.50m, 3);
-        Customer c2 = new Customer("Logan Lay", new Address("123 Main St", "Anytown", "NY", "USA"));
+        Customer c2 = new Customer("Logan Lay", new Address("123 Main St", "New York", "NY", "USA"));
         Order o2 = new Order(c2);
         o2.AddItem(p21);
         o2.AddItem(p22);
@@ -34,7 +34,7 @@ class Program
         Product p31 = new Product("Fries","A2",7.99m,3);
         Product p32 = new Product("Chicken", "F7", 9.50m, 3);
         Product p33 = new Product("Smoothie", "G6", 3.89m, 2);
-        Customer c3 = new Customer("Logan Lay", new Address("123 Main St", "Anytown", "NY", "USA"));
+        Customer c3 = new Customer("Logan Lay", new Address("123 Main St", "Boston", "MA", "UK"));
         Order o3 = new Order(c3);
         o3.AddItem(p31);
         o3.AddItem(p32);
